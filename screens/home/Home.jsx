@@ -2,6 +2,7 @@ import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-na
 import React from 'react'
 import reusable from '../../components/Reusable/reusable.style'
 import { HeightSpacer, ReusableText, Recommendations} from '../../components'
+import BestHotels from '../../components/Home/BestHotels'
 import Places from '../../components/Home/Places'
 import { COLORS, SIZES, TEXT } from '../../constants/theme'
 import {AntDesign} from '@expo/vector-icons'
@@ -43,6 +44,10 @@ const Home = ({navigation}) => {
         <HeightSpacer height={15}/>
 
         <Recommendations/>
+
+        <HeightSpacer height={30}/>
+
+        <BestHotels/>
       </View>
     </SafeAreaView>
   )
