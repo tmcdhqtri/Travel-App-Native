@@ -12,8 +12,10 @@ import {
   HeightSpacer,
   HotelMap,
   NetworkImage,
+  ReusableBtn,
   ReusableText,
   ReviewsList,
+  WidthSpacer,
 } from "../../components";
 import { COLORS, SIZES, TEXT } from "../../constants/theme";
 import styles from "./hotelDetails.style";
@@ -53,23 +55,27 @@ const HotelDetails = ({ navigation }) => {
     reviews: [
       {
         _id: "64d38ff59af9119acfab0ece",
-        review: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure voluptatum aliquam quisquam doloremque eum obcaecati ex quas. Necessitatibus voluptas excepturi quia, facilis nesciunt dicta quibusdam esse, natus vel autem, laborum officiis consectetur consequatur aliquam repellendus!",
+        review:
+          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure voluptatum aliquam quisquam doloremque eum obcaecati ex quas. Necessitatibus voluptas excepturi quia, facilis nesciunt dicta quibusdam esse, natus vel autem, laborum officiis consectetur consequatur aliquam repellendus!",
         rating: 4.6,
         user: {
           _id: "64c5d95adc7efae2a45ec376",
           username: "John Doe",
-          profile: "https://d326fntlu7tb1e.cloudfront.net/uploads/4c004766-c0ad-42ed-bef1-6a7616b24c11-vinci_11.jpg",
+          profile:
+            "https://d326fntlu7tb1e.cloudfront.net/uploads/4c004766-c0ad-42ed-bef1-6a7616b24c11-vinci_11.jpg",
         },
         updatedAt: "2023-08-09",
       },
       {
         _id: "64d797efa5628cedef4fce58",
-        review: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non nam odit impedit molestiae autem explicabo expedita modi, quasi dignissimos optio. Reprehenderit exercitationem quaerat perspiciatis quasi, inventore provident nobis nesciunt iusto.",
+        review:
+          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non nam odit impedit molestiae autem explicabo expedita modi, quasi dignissimos optio. Reprehenderit exercitationem quaerat perspiciatis quasi, inventore provident nobis nesciunt iusto.",
         rating: 4.6,
         user: {
           _id: "64c5d95adc7efae2a45ec376",
           username: "Zoes Doe",
-          profile: "https://d326fntlu7tb1e.cloudfront.net/uploads/4c004766-c0ad-42ed-bef1-6a7616b24c11-vinci_11.jpg",
+          profile:
+            "https://d326fntlu7tb1e.cloudfront.net/uploads/4c004766-c0ad-42ed-bef1-6a7616b24c11-vinci_11.jpg",
         },
         updatedAt: "2023-08-09",
       },
@@ -195,7 +201,37 @@ const HotelDetails = ({ navigation }) => {
 
           <HeightSpacer height={10} />
 
-          <ReviewsList reviews={hotel.reviews}/>
+          <ReviewsList reviews={hotel.reviews} />
+        </View>
+
+        <View style={[reusable.rowWithSpace("space-between"), styles.bottom]}>
+          <View>
+            <ReusableText
+              text={`\$ ${hotel.price}`}
+              family={"medium"}
+              size={SIZES.large}
+              color={COLORS.black}
+            />
+
+            <HeightSpacer height={5} />
+
+            <ReusableText
+              text={"Jan 01 - Dec 25"}
+              family={"medium"}
+              size={SIZES.medium}
+              color={COLORS.gray}
+            />
+          </View>
+
+          <ReusableBtn
+           onPress={() => navigation.navigate("SelectRoom")}
+           btntext={"Select Room"}
+           width={(SIZES.width - 50)/2.2}
+           backgroundColor={COLORS.green}
+           borderColor={COLORS.green}
+           borderWidth={0}
+           textColor={COLORS.white}
+          />
         </View>
       </View>
     </ScrollView>
