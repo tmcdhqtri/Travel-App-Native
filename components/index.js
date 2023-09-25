@@ -9,6 +9,9 @@ import Rating from "./Reusable/Rating";
 import DescriptionText from "./Reusable/DescriptionText";
 import AppBar from "./Reusable/AppBar";
 import PopularList from "./Country/PopularList";
+import HotelMap from "./Hotel/HotelMap";
+import ReviewTle from "./Titles/Reviews/ReviewTle";
+import ReviewsList from "./Hotel/ReviewsList";
 export {
   ReusableText,
   ReusableBtn,
@@ -20,5 +23,8 @@ export {
   Rating,
   DescriptionText,
   AppBar,
-  PopularList
+  PopularList,
+  HotelMap,
+  ReviewTle,
+  ReviewsList
 };
