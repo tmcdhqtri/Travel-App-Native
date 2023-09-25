@@ -56,7 +56,6 @@ const PlaceDetails = ({navigation}) => {
     ]
 }
 
-  console.log(id);
   return (
     <ScrollView>
     <View>
