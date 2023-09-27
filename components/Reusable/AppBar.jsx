@@ -1,9 +1,10 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
-import reusable from "../Reusable/reusable.style";
+import reusable from "../../components/Reusable/reusable.style";
 import { AntDesign } from "@expo/vector-icons";
 import ReusableText from "./ReusableText";
 import { COLORS, SIZES, TEXT } from "../../constants/theme";
+
 const AppBar = ({
   color,
   title,

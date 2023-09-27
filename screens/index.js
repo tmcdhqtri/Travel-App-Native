@@ -1,8 +1,8 @@
 import Onboarding from "./onboarding/Onboarding";
 import Home from "./home/Home";
 import Location from "./location/Location";
-import Profile from "./profile/Profile";
 import Chat from "./chat/Chat";
+import Profile from "./profile/Profile";
 import Search from "./search/Search";
 import CountryDetails from "./details/CountryDetails";
 import Recommended from "./details/Recommended";
@@ -16,10 +16,11 @@ import TopInfo from "./top/TopInfo";
 import TopTrips from "./top/TopTrips";
 export {
   Onboarding,
+  SelectRoom,
   Home,
   Location,
-  Profile,
   Chat,
+  Profile,
   Search,
   CountryDetails,
   Recommended,
@@ -27,7 +28,6 @@ export {
   HotelDetails,
   HotelList,
   HotelSearch,
-  SelectRoom,
   TopBookings,
   TopInfo,
   TopTrips,

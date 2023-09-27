@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, VirtualizedList } from "react-native";
 import React from "react";
 import HeightSpacer from "../Reusable/HeightSpacer";
 import { SIZES } from "../../constants/theme";
-import Country from "../Titles/Country/Country";
+import Country from "../Tiles/Country/Country";
 
 const Places = () => {
   const countries = [
@@ -52,7 +52,6 @@ const Places = () => {
       region: "East Asia, China",
     },
   ];
-
   return (
     <View>
       <HeightSpacer height={20} />
@@ -64,9 +63,9 @@ const Places = () => {
         showsHorizontalScrollIndicator={false}
         getItemCount={(data) => data.length}
         getItem={(data, index) => data[index]}
-        renderItem={({ item,index }) => (
-          <View style={{marginRight: SIZES.medium}}>
-           <Country item={item} />
+        renderItem={({ item, index }) => (
+          <View style={{ marginRight: SIZES.medium }}>
+            <Country item={item} />
           </View>
         )}
       />

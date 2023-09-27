@@ -1,14 +1,14 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View } from "react-native";
+import React from "react";
 
 const TopInfo = () => {
   return (
     <View>
       <Text>TopInfo</Text>
     </View>
-  )
-}
+  );
+};
 
-export default TopInfo
+export default TopInfo;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});

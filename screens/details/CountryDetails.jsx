@@ -1,21 +1,20 @@
 import {
-  StyleSheet,
-  View,
-  Text,
   ScrollView,
+  StyleSheet,
+  Text,
   TouchableOpacity,
+  View,
 } from "react-native";
 import React from "react";
 import { useRoute } from "@react-navigation/native";
-import { SafeAreaView } from "react-native-safe-area-context";
 import {
   NetworkImage,
   AppBar,
+  HeightSpacer,
   ReusableText,
   DescriptionText,
   ReusableBtn,
   PopularList,
-  HeightSpacer,
 } from "../../components/index";
 import { COLORS, TEXT, SIZES } from "../../constants/theme";
 import reusable from "../../components/Reusable/reusable.style";
@@ -87,6 +86,8 @@ const CountryDetails = ({ navigation }) => {
         <DescriptionText text={country.description} />
 
         <View style={{ alignContent: "center" }}>
+          <HeightSpacer height={20} />
+
           <View style={reusable.rowWithSpace("space-between")}>
             <ReusableText
               text={"Popular Destinations"}
@@ -106,14 +107,13 @@ const CountryDetails = ({ navigation }) => {
 
           <ReusableBtn
             onPress={() => navigation.navigate("HotelSearch")}
-            btntext={"Find Best Hotels"}
+            btnText={"Find Best Hotels"}
             width={SIZES.width - 40}
             backgroundColor={COLORS.green}
             borderColor={COLORS.green}
             borderWidth={0}
             textColor={COLORS.white}
           />
-
           <HeightSpacer height={50} />
         </View>
       </View>
@@ -126,7 +126,6 @@ export default CountryDetails;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#F3F4F8",
-    marginHorizontal: 20,
   },
   description: {
     marginHorizontal: 20,

@@ -5,11 +5,11 @@ const reusable = StyleSheet.create({
     flex: 1,
     marginHorizontal: 20,
   },
-  rowWithSpace:(justifyContent)=> ({
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: justifyContent
-  })
+  rowWithSpace: (justifyContent) => ({
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: justifyContent,
+  }),
 });
 
 export default reusable;

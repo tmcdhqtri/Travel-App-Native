@@ -1,4 +1,4 @@
-import { Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import styles from "./review.style";
 import reusable from "../../Reusable/reusable.style";
@@ -23,7 +23,7 @@ const ReviewTle = ({ review }) => {
 
           <WidthSpacer width={20} />
 
-          <View style={{width:"80%"}}>
+          <View style={{ width: "80%" }}>
             <View style={reusable.rowWithSpace("space-between")}>
               <ReusableText
                 text={review.user.username}
@@ -31,24 +31,21 @@ const ReviewTle = ({ review }) => {
                 size={SIZES.small + 2}
                 color={COLORS.black}
               />
+              <WidthSpacer width={"30%"} />
 
-               <WidthSpacer width={"26%"} />
-{/* It must be 30% but I change */}
               <View style={reusable.rowWithSpace("space-between")}>
-                <Rating
-                rating={review.rating}
-                />
+                <Rating rating={review.rating} />
                 <WidthSpacer width={10} />
                 <ReusableText
-                text={review.updatedAt}
-                family={"medium"}
-                size={SIZES.small + 2}
-                color={COLORS.black}
-              />
+                  text={review.updatedAt}
+                  family={"medium"}
+                  size={SIZES.small + 2}
+                  color={COLORS.black}
+                />
               </View>
             </View>
 
-            <DescriptionText text={review.review} lines={2}/>
+            <DescriptionText text={review.review} lines={2} />
           </View>
         </View>
       </View>

@@ -1,36 +1,35 @@
-import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
-import reusable from '../../components/Reusable/reusable.style'
-import { HeightSpacer, ReusableText, Recommendations} from '../../components'
-import BestHotels from '../../components/Home/BestHotels'
-import Places from '../../components/Home/Places'
-import { COLORS, SIZES, TEXT } from '../../constants/theme'
-import {AntDesign} from '@expo/vector-icons'
-import styles from './home.style'
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import React from "react";
+import { SafeAreaView } from "react-native-safe-area-context";
+import reusable from "../../components/Reusable/reusable.style";
+import { ReusableText, HeightSpacer, Recommendations } from "../../components";
+import Places from "../../components/Home/Places";
+import { COLORS, SIZES, TEXT } from "../../constants/theme";
+import { AntDesign } from "@expo/vector-icons";
+import styles from "./home.style";
+import BestHotels from "../../components/Home/BestHotels";
 
-const Home = ({navigation}) => {
+const Home = ({ navigation }) => {
   return (
     <SafeAreaView style={reusable.container}>
       <View>
-        <View style={reusable.rowWithSpace('space-between')}>
+        <View style={reusable.rowWithSpace("space-between")}>
           <ReusableText
-          text={'Hey User!'}
-          family={'regular'}
-          size={TEXT.large}
-          color={COLORS.black}
+            text={"Hey User!"}
+            family={"regular"}
+            size={TEXT.large}
+            color={COLORS.black}
           />
 
-          <TouchableOpacity style={styles.box}
-            onPress={() => navigation.navigate('Search')}
+          <TouchableOpacity
+            style={styles.box}
+            onPress={() => navigation.navigate("Search")}
           >
-            <AntDesign
-            name='search1'
-            size={26}
-            />
+            <AntDesign name="search1" size={26} />
           </TouchableOpacity>
         </View>
 
-        <HeightSpacer height={SIZES.xLarge}/>
+        <HeightSpacer height={SIZES.xLarge} />
 
         <ReusableText
           text={"Places"}
@@ -39,18 +38,18 @@ const Home = ({navigation}) => {
           color={COLORS.black}
         />
 
-        <Places/>
+        <Places />
 
-        <HeightSpacer height={15}/>
+        <HeightSpacer height={15} />
 
-        <Recommendations/>
+        <Recommendations />
 
-        <HeightSpacer height={30}/>
+        <HeightSpacer height={30} />
 
-        <BestHotels/>
+        <BestHotels />
       </View>
     </SafeAreaView>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

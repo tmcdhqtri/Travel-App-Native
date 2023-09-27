@@ -1,7 +1,7 @@
 import { View, Text } from "react-native";
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Home, Location, Profile, Chat } from "../screens";
+import { Home, Profile, Chat, Location } from "../screens";
 import { Ionicons } from "@expo/vector-icons";
 import { COLORS } from "../constants/theme";
 import TopTab from "./TopTab";
@@ -22,8 +22,8 @@ const BottomTabNavigation = () => {
   return (
     <Tab.Navigator
       initialRouteName="Home"
-      activeColor="#B6A58"
-      tabBarHideKeyboard={true}
+      activeColor="#EB6A58"
+      tabBarHideKeyBoard={true}
       headerShown={false}
       inactiveColor="#3e2465"
       barStyle={{ paddingBottom: 48 }}
@@ -46,7 +46,7 @@ const BottomTabNavigation = () => {
       />
 
       <Tab.Screen
-        name="Loacation"
+        name="Location"
         component={Location}
         options={{
           tabBarStyle: tabBarStyle,

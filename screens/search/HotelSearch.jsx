@@ -10,14 +10,14 @@ import React, { useState, useEffect } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import reusable from "../../components/Reusable/reusable.style";
 import styles from "./search.style";
-import { Feather } from "@expo/vector-icons";
+import { Feather, AntDesign } from "@expo/vector-icons";
 import { COLORS } from "../../constants/theme";
 import { AppBar, HeightSpacer } from "../../components";
-import HotelCard from "../../components/Titles/Hotels/HotelCard";
+import HotelCard from "../../components/Tiles/Hotels/HotelCard";
 
 const HotelSearch = ({ navigation }) => {
   const [searchKey, setSearchKey] = useState("");
-  const [searchResult, setSearchResult] = useState([]);
+  const [searchResults, setSearchResults] = useState([]);
   const hotels = [
     {
       _id: "64c674d23cfa5e847bcd5430",
@@ -72,27 +72,26 @@ const HotelSearch = ({ navigation }) => {
   ];
   return (
     <SafeAreaView>
-       <View style={{height:50}}>
-       <AppBar
-        top={20}
-        left={20}
-        right={20}
-        title={'Look for hotels'}
-        color={COLORS.white}
-        icon={"filter"}
-        color1={COLORS.white}
-        onPress={() => navigation.goBack()}
-        onPress1={() => {}}
-      />
-       </View>
-
+      <View style={{ height: 50 }}>
+        <AppBar
+          top={10}
+          left={20}
+          right={20}
+          title={"Look for hotels"}
+          color={COLORS.white}
+          icon={"filter"}
+          color1={COLORS.white}
+          onPress={() => navigation.goBack()}
+          onPress1={() => {}}
+        />
+      </View>
       <View style={styles.searchContainer}>
         <View style={styles.searchWrapper}>
           <TextInput
             style={styles.input}
             value={searchKey}
             onChangeText={setSearchKey}
-            placeholder="Where do you want to stay?"
+            placeholder="Where do you want to stay"
           />
         </View>
 
@@ -103,21 +102,19 @@ const HotelSearch = ({ navigation }) => {
 
       {hotels.length === 0 ? (
         <View>
-          <HeightSpacer height={"18%"} />
+          <HeightSpacer height={"20%"} />
           <Image
             source={require("../../assets/images/search.png")}
             style={styles.searchImage}
           />
         </View>
       ) : (
-        <View style={{ paddingLeft: 14 }}>
+        <View style={{ paddingLeft: 12 }}>
           <FlatList
             data={hotels}
             keyExtractor={(item) => item._id}
             numColumns={2}
-            ItemSeparatorComponent={() => (
-              <View style={{height: 16}}/>
-            )}
+            ItemSeparatorComponent={() => <View style={{ height: 16 }} />}
             renderItem={({ item }) => (
               <HotelCard
                 item={item}

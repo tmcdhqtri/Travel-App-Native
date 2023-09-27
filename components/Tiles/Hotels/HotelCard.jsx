@@ -1,7 +1,12 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { COLORS, SIZES, TEXT } from "../../../constants/theme";
-import { HeightSpacer, NetworkImage, Rating, ReusableText } from "../../index";
+import {
+  HeightSpacer,
+  NetworkImage,
+  Rating,
+  ReusableText,
+} from "../../../components/index";
 
 const HotelCard = ({ item, margin, onPress }) => {
   return (
@@ -25,13 +30,16 @@ const HotelCard = ({ item, margin, onPress }) => {
             size={SIZES.medium}
             color={COLORS.black}
           />
+
           <HeightSpacer height={5} />
+
           <ReusableText
             text={item.location}
             family={"medium"}
             size={SIZES.medium}
             color={COLORS.gray}
           />
+
           <HeightSpacer height={5} />
 
           <Rating rating={item.rating} />

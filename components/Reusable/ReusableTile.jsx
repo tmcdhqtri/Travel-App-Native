@@ -8,12 +8,12 @@ import {
   Rating,
   ReusableText,
   WidthSpacer,
-} from "../index";
+} from "../../components/index";
 
 const ReusableTile = ({ item, onPress }) => {
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
-      <View style={reusable.rowWithSpace('flex-start')}>
+      <View style={reusable.rowWithSpace("flex-start")}>
         <NetworkImage
           source={item.imageUrl}
           width={80}
@@ -30,7 +30,6 @@ const ReusableTile = ({ item, onPress }) => {
             size={SIZES.medium}
             color={COLORS.black}
           />
-
           <HeightSpacer height={8} />
 
           <ReusableText
@@ -44,11 +43,9 @@ const ReusableTile = ({ item, onPress }) => {
 
           <View style={reusable.rowWithSpace("flex-start")}>
             <Rating rating={item.rating} />
-
             <WidthSpacer width={5} />
-
             <ReusableText
-              text={`  (${item.review})  `}
+              text={` (${item.review}) `}
               family={"medium"}
               size={14}
               color={COLORS.gray}

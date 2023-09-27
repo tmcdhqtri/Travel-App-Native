@@ -13,7 +13,7 @@ const PopularList = ({ data }) => {
         onPress={() => navigation.navigate("PlaceDetails", item._id)}
       />
     </View>
-  )
+  );
 
   return (
     <FlatList
@@ -22,7 +22,7 @@ const PopularList = ({ data }) => {
       showsVerticalScrollIndicator={false}
       renderItem={renderItem}
     />
-  ); 
+  );
 };
 
 export default PopularList;

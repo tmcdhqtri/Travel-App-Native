@@ -1,4 +1,4 @@
-import { FlatList, Text, View } from "react-native";
+import { View, Text, FlatList } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import AppBar from "../../components/Reusable/AppBar";
@@ -78,7 +78,6 @@ const HotelList = ({ navigation }) => {
         <FlatList
           data={hotels}
           keyExtractor={(item) => item._id}
-          contentContainerStyle={{ columnGap: SIZES.medium }}
           renderItem={({ item }) => (
             <View style={{ marginBottom: 10 }}>
               <ReusableTile

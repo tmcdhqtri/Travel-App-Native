@@ -17,6 +17,6 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     fontFamily: "regular",
     textAlign: "justify",
-    fontSize: TEXT.medium,
+    fontSize: TEXT.medium - 2,
   },
 });
