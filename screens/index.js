@@ -16,6 +16,10 @@ import TopInfo from "./top/TopInfo";
 import TopTrips from "./top/TopTrips";
 import Payments from "./profile/Payments";
 import Settings from "./settings/Settings";
+import Successful from "./bookings/Successful";
+import Failed from "./bookings/Failed";
+import Registration from "./authentication/Registration";
+import Signin from "./authentication/Signin";
 export {
   Onboarding,
   SelectRoom,
@@ -35,4 +39,8 @@ export {
   TopTrips,
   Payments,
   Settings,
+  Successful,
+  Failed,
+  Registration,
+  Signin,
 };
