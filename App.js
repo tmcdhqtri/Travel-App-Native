@@ -13,6 +13,8 @@ import {
   HotelList,
   HotelSearch,
   SelectRoom,
+  Payments,
+  Settings,
 } from "./screens";
 import BottomTabNavigation from "./navigation/BottomTabNavigation";
 
@@ -88,6 +90,16 @@ export default function App() {
         <Stack.Screen
           name="SelectRoom"
           component={SelectRoom}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Payments"
+          component={Payments}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Settings"
+          component={Settings}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
