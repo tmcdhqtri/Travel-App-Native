@@ -8,8 +8,8 @@
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "resizeMode": "cover",
+      "backgroundColor": "#EBD9CD"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -20,11 +20,22 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+        "backgroundColor": "#EBD9CD"
+      },
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyBmLj_6tI-wVz3yrcNXg6qTi1VPAOmzMNY"
+        }
+      },
+      "package": "com.dacarnage.travel_app"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": ""
+      }
     }
   }
 }

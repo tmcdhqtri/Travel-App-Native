@@ -1,26 +1,34 @@
-import { StyleSheet, View, Text } from "react-native";
-import React from "react";
-import MapView, { Marker } from "react-native-maps";
+import React from 'react';
+import { StyleSheet } from 'react-native';
+import MapView, { Marker } from 'react-native-maps';
+import fetchUserLocation from '../../hook/fetchLocation';
 
 const Location = () => {
+  const {location, errorMsg} = fetchUserLocation();
+  
   const coordinates = {
-    latitude: 35.6855,
-    longotude: 139.68884,
+    latitude: 15.9685,
+    longitude: 108.2606,  
     latitudeDelta: 0.01,
     longitudeDelta: 0.01,
-    title: "My Location",
+    title: "My Location"
   };
+
   return (
     <MapView initialRegion={coordinates} style={styles.mapStyle}>
-      <Marker coordinate={coordinates} title={coordinates.title} />
+      {location === null && (
+         <Marker coordinate={coordinates} title={coordinates.title}/>
+      )}
+        <Marker coordinate={location} title={"My location"}/>
     </MapView>
   );
-};
+}
 
 export default Location;
 
 const styles = StyleSheet.create({
   mapStyle: {
-    ...StyleSheet.absoluteFillObject,
-  },
+    width: "100%",
+    height: "100%"
+  }
 });

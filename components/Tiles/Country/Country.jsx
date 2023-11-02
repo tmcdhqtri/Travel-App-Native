@@ -1,19 +1,13 @@
 import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
 import { TEXT, COLORS } from "../../../constants/theme";
-import {
-  NetworkImage,
-  ReusableText,
-  HeightSpacer,
-} from "../../../components/index";
+import { NetworkImage, ReusableText, HeightSpacer } from "../../../components/index";
 import { useNavigation } from "@react-navigation/native";
 
 const Country = ({ item }) => {
   const navigation = useNavigation();
   return (
-    <TouchableOpacity
-      onPress={() => navigation.navigate("CountryDetails", { item })}
-    >
+    <TouchableOpacity onPress={()=> navigation.navigate('CountryDetails', item._id)}>
       <View>
         <NetworkImage
           source={item.imageUrl}
@@ -21,7 +15,7 @@ const Country = ({ item }) => {
           height={85}
           radius={12}
         />
-        <HeightSpacer height={5} />
+        <HeightSpacer height={5}/>
 
         <ReusableText
           text={item.country}

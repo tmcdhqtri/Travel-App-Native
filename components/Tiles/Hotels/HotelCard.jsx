@@ -54,7 +54,7 @@ export default HotelCard;
 const styles = StyleSheet.create({
   card: (margin) => ({
     width: SIZES.width / 2.2,
-    height: 250,
+    height: SIZES.height/3.8,
     borderRadius: 16,
     backgroundColor: COLORS.lightWhite,
     marginRight: margin,
@@ -62,6 +62,6 @@ const styles = StyleSheet.create({
   imageContainer: {
     alignItems: "center",
     marginTop: 10,
-    height: 150,
+    height: SIZES.height/6.6,
   },
 });

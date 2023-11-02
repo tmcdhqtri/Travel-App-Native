@@ -5,7 +5,7 @@ import WidthSpacer from "./Reusable/WidthSpacer";
 import NetworkImage from "./Reusable/NetworkImage";
 import Recommendations from "./Home/Recommendations";
 import Rating from "./Reusable/Rating";
-import AppBar from "./Reusable/AppBar";
+import AppBar from './Reusable/AppBar';
 import DescriptionText from "./Reusable/DescriptionText";
 import PopularList from "./Country/PopularList";
 import HotelMap from "./Hotel/HotelMap";
@@ -15,23 +15,25 @@ import ProfileTile from "./Reusable/ProfileTile";
 import SettingTile from "./Tiles/Settings/SettingTile";
 import AssetImage from "./Reusable/AssetImage";
 import Counter from "./Reusable/Counter";
+import Payment from "./Reusable/Payment";
 
 export {
-  ReusableText,
-  ReusableBtn,
-  HeightSpacer,
-  WidthSpacer,
-  NetworkImage,
-  Recommendations,
-  Rating,
-  AppBar,
-  DescriptionText,
-  PopularList,
-  HotelMap,
-  ReviewTle,
-  ReviewsList,
-  ProfileTile,
-  SettingTile,
-  AssetImage,
-  Counter,
-};
+    Payment,
+    ReusableText,
+    Counter,
+    ReusableBtn,
+    HeightSpacer,
+    WidthSpacer, 
+    NetworkImage,
+    Recommendations,
+    Rating,
+    AppBar,
+    DescriptionText,
+    PopularList, 
+    HotelMap,
+    ReviewTle,
+    ReviewsList,
+    ProfileTile, 
+    SettingTile, 
+    AssetImage
+}

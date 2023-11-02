@@ -14,11 +14,11 @@ import {
 } from "../../components";
 import { COLORS, SIZES } from "../../constants/theme";
 import reusable from "../../components/Reusable/reusable.style";
+import Payment from "../../components/Reusable/Payment";
 
 const SelectedRoom = ({ navigation }) => {
   const router = useRoute();
   const { item } = router.params;
-  console.log(item);
   return (
     <View>
       <View style={{ height: 100 }}>
@@ -108,7 +108,7 @@ const SelectedRoom = ({ navigation }) => {
 
             <HeightSpacer height={15} />
 
-            <View style={reusable.rowWithSpace("space-between")}>
+            {/* <View style={reusable.rowWithSpace("space-between")}>
               <ReusableText
                 text={"Payment Method"}
                 family={"regular"}
@@ -129,7 +129,12 @@ const SelectedRoom = ({ navigation }) => {
                   color={COLORS.black}
                 />
               </View>
-            </View>
+            </View> */}
+
+            <Payment 
+            title={"Mastercard"}
+            image={require("../../assets/images/Mastercard.png")}
+            />
 
             <HeightSpacer height={15} />
 
