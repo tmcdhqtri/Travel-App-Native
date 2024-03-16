@@ -24,7 +24,7 @@
       },
       "config": {
         "googleMaps": {
-          "apiKey": "AIzaSyBmLj_6tI-wVz3yrcNXg6qTi1VPAOmzMNY"
+          "apiKey": ""
         }
       },
       "package": "com.dacarnage.travel_app"
