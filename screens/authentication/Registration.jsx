@@ -10,19 +10,20 @@ import {
   HeightSpacer,
   ReusableBtn,
 } from "../../components";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
-import reusable from "../../components/Reusable/reusable.style";
-import { AntDesign } from "@expo/vector-icons";
 
 const validationSchema = Yup.object().shape({
   password: Yup.string()
     .min(8, "Password must be at least 8 characters")
     .required("Required"),
+
+  username: Yup.string()
+    .min(3, "Username must be at least 3 characters")
+    .required("Required"),
   email: Yup.string().email("Provide a valid email").required("Required"),
 });
 
-const Signin = ({ navigation }) => {
+const Registration = () => {
   const [loader, setLoader] = useState(false);
   const [responseData, setResponseData] = useState(null);
   const [obsecureText, setObsecureText] = useState(false);
@@ -41,24 +42,31 @@ const Signin = ({ navigation }) => {
     ]);
   };
 
-  const login = async (values) => {
+  const register = async (values) => {
     setLoader(true);
 
     try {
-      const endpoint = "http://10.12.0.147:5003/api/login";
+      const endpoint = "http://172.20.10.4:5003/api/register";
       const data = values;
 
       const response = await axios.post(endpoint, data);
-      if (response.status === 200) {
+      if (response.status === 201) {
         setLoader(false);
-        setResponseData(response.data);
-        await AsyncStorage.setItem("id", JSON.stringify(responseData.id));
-        await AsyncStorage.setItem("token", JSON.stringify(responseData.token));
-
-      
-        navigation.replace("Bottom");
+        Alert.alert("Registration Successful ", "Please provide to login your account ", [
+          {
+            text: "Cancel",
+            onPress: () => {},
+          },
+          {
+            text: "Continue",
+            onPress: () => {},
+          },
+          { defaultIndex: 1 },
+        ]);
+        
+       
       } else {
-        Alert.alert("Error Logging in ", "Please provide valid credentials ", [
+        Alert.alert("Error Signing in ", "Please provide valid credentials ", [
           {
             text: "Cancel",
             onPress: () => {},
@@ -91,13 +99,15 @@ const Signin = ({ navigation }) => {
     }
   };
 
+
+
   return (
     <View style={styles.container}>
       <Formik
-        initialValues={{ email: "", password: "" }}
+        initialValues={{ email: "", password: "", username: "" }}
         validationSchema={validationSchema}
         onSubmit={(values) => {
-          login(values);
+          register(values)
         }}
       >
         {({
@@ -110,6 +120,43 @@ const Signin = ({ navigation }) => {
           setFieldTouched,
         }) => (
           <View style={{ paddingTop: 30 }}>
+            <View style={styles.wrapper}>
+              <Text style={styles.label}>Username</Text>
+              <View>
+                <View
+                  style={styles.inputWrapper(
+                    touched.username ? COLORS.lightBlue : COLORS.lightGrey
+                  )}
+                >
+                  <MaterialCommunityIcons
+                    name="face-man-profile"
+                    size={20}
+                    color={COLORS.gray}
+                  />
+
+                  <WidthSpacer width={10} />
+
+                  <TextInput
+                    placeholder="Enter username"
+                    onFocus={() => {
+                      setFieldTouched("username");
+                    }}
+                    onBlur={() => {
+                      setFieldTouched("username", "");
+                    }}
+                    value={values.username}
+                    onChangeText={handleChange("username")}
+                    autoCapitalize="none"
+                    autoCorrect={false}
+                    style={{ flex: 1 }}
+                  />
+                </View>
+                {touched.username && errors.username && (
+                  <Text style={styles.errorMessage}>{errors.username}</Text>
+                )}
+              </View>
+            </View>
+
             <View style={styles.wrapper}>
               <Text style={styles.label}>Email</Text>
               <View>
@@ -198,19 +245,15 @@ const Signin = ({ navigation }) => {
 
             <HeightSpacer height={20} />
 
-            <View style={reusable.rowWithSpace("space-between")}>
-              <AntDesign name="leftcircleo" size={45} color={COLORS.green} onPress={()=> navigation.navigate('Bottom')}/>
-
-              <ReusableBtn
-                onPress={isValid ? handleSubmit : errorLogin}
-                btnText={"SIGN IN"}
-                width={SIZES.width - 100}
-                backgroundColor={COLORS.green}
-                borderColor={COLORS.green}
-                borderWidth={0}
-                textColor={COLORS.white}
-              />
-            </View>
+            <ReusableBtn
+              onPress={isValid? handleSubmit : errorLogin}
+              btnText={"REGISTER"}
+              width={SIZES.width - 40}
+              backgroundColor={COLORS.green}
+              borderColor={COLORS.green}
+              borderWidth={0}
+              textColor={COLORS.white}
+            />
           </View>
         )}
       </Formik>
@@ -218,4 +261,4 @@ const Signin = ({ navigation }) => {
   );
 };
 
-export default Signin;
+export default Registration;

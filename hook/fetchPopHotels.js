@@ -11,7 +11,7 @@ const fetchHotelsByCountry = (id) => {
         setIsLoading(true)
 
         try {
-            const response = await axios.get(`http://10.12.0.147:5003/api/hotels/byCountry/${id}?limit=all`);
+            const response = await axios.get(`http://172.20.10.4:5003/api/hotels/byCountry/${id}?limit=all`);
             console.log(response.data);
             setPlace(response.data.hotels)
             setIsLoading(false)

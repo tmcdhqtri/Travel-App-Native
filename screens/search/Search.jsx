@@ -15,7 +15,7 @@ const Search = ({navigation}) => {
   
   const handleSearch = async() =>{
     try {
-      const response = await axios.get(`http://10.12.0.147:5003/api/places/search/${searchKey}`)
+      const response = await axios.get(`http://172.20.10.4:5003/api/places/search/${searchKey}`)
       setSearchResults(response.data)
     } catch (error) {
       console.log("Failed to get products" , error);

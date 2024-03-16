@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const fetchHotels = (places) => {
-    const [hotels, setHotels] = useState([]);
+const fetchRecommendations = (places) => {
+    const [recommendations, setRecommendations] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null)
 
@@ -12,11 +12,11 @@ const fetchHotels = (places) => {
 
         try {
             if (places === 1) {
-                const response = await axios.get('http://10.12.0.147:5003/api/hotels/byCountry/651c47c984c373c3500dbc36?limit=3');
-                setHotels(response.data.hotels)
+                const response = await axios.get('http://172.20.10.4:5003/api/places?limit=3');
+                setRecommendations(response.data.places)
             } else {
-                const response = await axios.get('http://10.12.0.147:5003/api/hotels/byCountry/651c47c984c373c3500dbc36');
-                setHotels(response.data.hotels)
+                const response = await axios.get('http://172.20.10.4:5003/api/places');
+                setRecommendations(response.data.places)
             }
 
             setIsLoading(false)
@@ -37,7 +37,7 @@ const fetchHotels = (places) => {
     }
 
 
-    return { hotels, isLoading, error, refetch }
+    return { recommendations, isLoading, error, refetch }
 }
 
-export default fetchHotels
+export default fetchRecommendations

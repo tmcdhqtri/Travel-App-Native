@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const fetchReviews = (id) => {
-    const [reviews, setReviews] = useState([]);
+const fetchPlace = (id) => {
+    const [place, setPlace] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null)
 
@@ -11,9 +11,9 @@ const fetchReviews = (id) => {
         setIsLoading(true)
 
         try {
-            const response = await axios.get(`http://10.12.0.147:5003/api/reviews/${id}`);
+            const response = await axios.get(`http://172.20.10.4:5003/api/places/${id}`);
 
-            setReviews(response.data)
+            setPlace(response.data.place)
             setIsLoading(false)
         } catch (error) {
            setError(error) 
@@ -32,7 +32,7 @@ const fetchReviews = (id) => {
     }
 
 
-    return {reviews, isLoading, error, refetch}
+    return {place, isLoading, error, refetch}
 }
 
-export default fetchReviews
+export default fetchPlace

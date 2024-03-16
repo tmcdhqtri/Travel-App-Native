@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const fetchCountries = () => {
-    const [countries, setCountries] = useState([]);
+const fetchReviews = (id) => {
+    const [reviews, setReviews] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null)
 
@@ -11,8 +11,9 @@ const fetchCountries = () => {
         setIsLoading(true)
 
         try {
-            const response = await axios.get('http://10.12.0.147:5003/api/countries');
-            setCountries(response.data.countries)
+            const response = await axios.get(`http://172.20.10.4:5003/api/reviews/${id}`);
+
+            setReviews(response.data)
             setIsLoading(false)
         } catch (error) {
            setError(error) 
@@ -31,7 +32,7 @@ const fetchCountries = () => {
     }
 
 
-    return {countries, isLoading, error, refetch}
+    return {reviews, isLoading, error, refetch}
 }
 
-export default fetchCountries
+export default fetchReviews

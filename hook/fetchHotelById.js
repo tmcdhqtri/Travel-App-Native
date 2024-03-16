@@ -12,7 +12,7 @@ const fetchHotelById = (id) => {
         setIsLoading(true)
 
         try {
-            const response = await axios.get(`http://10.12.0.147:5003/api/hotels/${id}`);
+            const response = await axios.get(`http://172.20.10.4:5003/api/hotels/${id}`);
 console.log(response.data.coordinates);
             setHotel(response.data)
             const newData = response.data.coordinates;
